@@ -1,14 +1,20 @@
 const express = require('express')
+const path = require("path")
 const app = express()
 
-//Middleware
+//Declare dir paths
+const publicDirPath = path.join(__dirname, "../public")
 
+//Middleware
+app.use(express.static(publicDirPath))
 
 //Routes
 app.get('/', (req, res) => {
-  res.send('Hello World')
+  
 })
  
 
+
 //Staring app
+console.log("App running on port 3000")
 app.listen(3000)
